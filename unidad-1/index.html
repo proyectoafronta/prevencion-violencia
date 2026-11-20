@@ -5,36 +5,160 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Unidad 1. Conceptos y marco legal | Mirar, nombrar, acompañar</title>
 <link rel="stylesheet" href="../assets/style.css">
+<style>
+/* Estilos propios de la unidad 1 (todo en este archivo) */
+.u-bur{--c:#8E3346}.u-cor{--c:#B93F27}.u-grn{--c:#0B7A3B}.u-blu{--c:#2A6291}.u-pur{--c:#6B3FA0}
+.cards{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:20px 0}
+.cards.sm{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.card{background:#fff;border:1px solid var(--line);border-top:6px solid var(--c,var(--bur));border-radius:14px;padding:16px 18px 14px;box-shadow:0 2px 10px rgba(36,31,43,.07)}
+.card h3{margin:.45em 0 .35em;color:var(--c,var(--bur))}
+.card p{margin:.5em 0}
+.card ul{margin:.4em 0;padding-left:1.2em}
+.card.wide{grid-column:1/-1}
+.tag{display:inline-block;font:700 .72rem/1 system-ui,sans-serif;letter-spacing:.07em;text-transform:uppercase;color:#fff;background:var(--c,var(--bur));padding:6px 10px;border-radius:999px}
+.card ul.chips,.chips{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:.6em 0;padding:0!important}
+.chips li{background:var(--mist);border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:.92rem}
+.legal{background:var(--mist);border-radius:10px;padding:10px 14px;font-size:.95rem;margin-top:12px}
+.callout{border-left:5px solid var(--c,var(--cor));background:var(--mist);border-radius:0 12px 12px 0;padding:6px 18px;margin:16px 0}
+.callout h4{margin:.8em 0 .2em;font:700 1rem system-ui,sans-serif;color:var(--c,var(--cor));text-transform:uppercase;letter-spacing:.05em}
+.idea{background:linear-gradient(135deg,#8E3346,#B93F27);color:#fff;border-radius:14px;padding:16px 20px;margin:22px 0}
+.idea p{margin:.2em 0}
+.fig{margin:18px auto;text-align:center}
+.fig svg{max-width:100%;height:auto}
+.fig figcaption{font-size:.9rem;color:#4a4352}
+.cardsol{counter-reset:s}
+.cardsol .card{counter-increment:s;position:relative;padding-top:26px}
+.cardsol .card::before{content:counter(s);position:absolute;top:-16px;left:16px;width:32px;height:32px;border-radius:50%;background:var(--c,var(--bur));color:#fff;font:700 1rem/32px system-ui,sans-serif;text-align:center}
+.fb p,.fb ul,.fb .cards,.fb .fig{margin-top:.7em;margin-bottom:.7em}
+.fb details{background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:12px 0}
+.case{background:#fff;border:1px solid var(--line);border-left:6px solid var(--cor);border-radius:12px;padding:12px 18px;margin:26px 0 8px}
+.case b.k{color:var(--cor)}
+.term{position:relative;display:inline}
+.termb{font:inherit;font-weight:700;color:var(--bur);background:none;border:0;border-bottom:2px dotted var(--bur);padding:0;cursor:help}
+.pop{position:absolute;z-index:30;left:0;top:calc(100% + 8px);width:min(340px,86vw);background:#241F2B;color:#fff;border-radius:12px;padding:12px 16px;font-size:.93rem;line-height:1.5;box-shadow:0 8px 24px rgba(0,0,0,.3);font-weight:400}
+.pop[hidden]{display:none}
+.pop::before{content:"";position:absolute;top:-6px;left:var(--ax,24px);width:12px;height:12px;background:#241F2B;transform:rotate(45deg)}
+@media(prefers-reduced-motion:no-preference){.pop{animation:pin .15s ease-out}@keyframes pin{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}}
+
+.stepper{margin:22px 0 4px;padding:14px 16px;background:var(--mist);border:1px solid var(--line);border-radius:14px}
+.stepinfo{margin:0 0 8px;font-size:.98rem}
+.pbar{height:8px;border-radius:99px;background:#E3DDE8;overflow:hidden}
+.pbar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#8E3346,#B93F27);border-radius:99px;transition:width .3s}
+.dots{display:flex;flex-wrap:wrap;gap:6px;list-style:none;margin:12px 0 4px;padding:0}
+.dots button{width:36px;height:36px;border-radius:50%;border:2px solid var(--bur);background:#fff;color:var(--bur);font:700 .9rem system-ui,sans-serif;cursor:pointer}
+.dots button.seen{background:#F3D9DE}
+.dots button[aria-current=step]{background:var(--bur);color:#fff}
+.linkbtn{background:none;border:0;color:var(--bur);text-decoration:underline;font:inherit;font-size:.92rem;padding:6px 0;cursor:pointer}
+.stepnav{display:flex;gap:12px;justify-content:space-between;align-items:center;margin:28px 0 8px;flex-wrap:wrap}
+.stepnav .btn[hidden]{display:none}
+.stepnav .nx{margin-left:auto}
+.step{outline:0}
+.step>h2:first-child{margin-top:.8em}
+.steps-on.all-off .step[hidden]{display:none}
+.allmode .stepdots,.allmode .stepnav{display:none}
+@media(max-width:700px){.dots button{width:32px;height:32px}.stepnav .btn{padding:11px 18px}}
+</style>
 </head>
 <body data-base="../">
 <main id="main" class="wrap">
 <p><a href="../index.html">Volver al índice</a></p>
 <h1>Unidad 1. Conceptos y marco legal</h1>
-<p class="meta">20 minutos. Objetivo: distinguir violencia contra las mujeres, violencia de género y violencia intrafamiliar, y conocer las normas básicas.</p>
+<p class="meta">30 minutos. Objetivo: distinguir violencia intrafamiliar, violencia contra las mujeres, violencia de género y violencia machista, reconocer sus formas y conocer las normas básicas.</p>
 
-<h2>1.1 Tres expresiones que se confunden</h2>
-<p>Abre cada apartado y lee la definición.</p>
-<details><summary>Violencia contra las mujeres</summary>
-<p>Es el concepto más amplio. El Convenio de Estambul (Consejo de Europa, 2011) la considera una violación de los derechos humanos y una forma de discriminación. Incluye cualquier acto basado en el género que cause o pueda causar daño físico, sexual, psicológico o económico, ocurra en público o en privado.</p></details>
-<details><summary>Violencia de género (definición legal estatal)</summary>
-<p>La Ley Orgánica 1/2004 la define como la que ejercen hombres sobre mujeres que son o han sido sus cónyuges o parejas, aunque no convivan. La ley la entiende como expresión de desigualdad y de relaciones de poder. En Cataluña, la <a href="https://www.boe.es/eli/es-ct/l/2008/04/24/5/con">Ley 5/2008</a> habla de «violencia machista» y contempla más ámbitos: la pareja, la familia, el trabajo, la comunidad, el entorno digital y las instituciones, entre otros.</p></details>
-<details><summary>Violencia intrafamiliar o doméstica</summary>
-<p>Es la que ocurre entre personas de una misma familia o que conviven: hacia hijos e hijas, personas mayores, entre hermanos o de hijos hacia padres y madres. El Código Penal (art. 173.2) sanciona la violencia habitual en el ámbito familiar. La Ley 5/2008 recoge también el «ámbito familiar»: la violencia contra mujeres y menores ejercida por otros miembros de la familia o del hogar, sin incluir la de la pareja.</p></details>
-<div class="note"><p><b>Idea clave:</b> no son compartimentos cerrados. En un mismo hogar pueden convivir la violencia hacia la mujer y la violencia hacia los menores.</p></div>
+<nav class="stepper" id="stepper" aria-label="Pasos de la unidad" hidden>
+<p class="stepinfo" aria-live="polite"><b id="si"></b> · <span id="st"></span></p>
+<div class="pbar" role="progressbar" aria-label="Progreso de la unidad" aria-valuemin="1" aria-valuemax="9" aria-valuenow="1"><i id="bf"></i></div>
+<ol class="dots stepdots" id="dots"></ol>
+<button class="linkbtn" id="vall" type="button" aria-pressed="false">Ver toda la unidad en una sola página</button>
+</nav>
 
-<h2>1.2 Formas de violencia</h2>
-<details><summary>Psicológica</summary><p>Insultos, humillaciones, amenazas, aislamiento, control de las amistades o del móvil. Es la más frecuente y la que menos se ve.</p></details>
-<details><summary>Física</summary><p>Golpes, empujones o cualquier agresión al cuerpo. No siempre deja marcas.</p></details>
-<details><summary>Sexual</summary><p>Cualquier acto sexual sin consentimiento, también dentro de la pareja.</p></details>
-<details><summary>Económica</summary><p>Controlar el dinero, impedir trabajar o negar los recursos básicos para la vida familiar.</p></details>
-<details><summary>Digital</summary><p>Vigilancia por redes o geolocalización, difusión de imágenes íntimas, acoso por mensajes.</p></details>
-<details><summary>Violencia institucional y vulnerabilidad inducida</summary>
-<p>La Ley 5/2008 reconoce la <b>violencia institucional</b>: acciones u omisiones de las instituciones que retrasan, dificultan o impiden que una mujer acceda a sus derechos, incluida la falta de la diligencia debida.</p>
-<p>La investigación antropológica añade un matiz: a veces no hay mala intención, sino <b>desconocimiento</b>. Si los servicios no conocen formas culturalmente diversas de pensar, comunicarse o criar, pueden interpretar mal a una mujer (por ejemplo, creer que «no colabora» o que «cuida mal») y, sin quererlo, añadirle una vulnerabilidad nueva. Grau Rebollo, García Tugas y García García (2023) la llaman <i>vulnerabilidad inducida</i>: un aumento de la vulnerabilidad que ya tenía la persona, dentro de los propios servicios de protección. Es un concepto cercano a la violencia institucional, pero no idéntico.</p>
-<p>Comprender el contexto no justifica ninguna violencia: ninguna costumbre justifica vulnerar derechos. Se trata de comprender antes de juzgar.</p></details>
+<div id="steps">
+<section class="step" id="paso-1" data-t="1.1 Tipos de violencia" aria-labelledby="h-1">
+<h2 id="h-1">1.1 Tipos de violencia que se confunden</h2>
+<p>Estos términos se usan a menudo como si fueran lo mismo, pero cada uno señala algo distinto. Lee cada tarjeta.</p>
+
+<div class="cards">
+<div class="card u-blu">
+<span class="tag">Señala el ámbito</span>
+<h3>Violencia intrafamiliar o doméstica</h3>
+<p>Es un término que identifica la violencia por el ámbito en el que se produce: las relaciones familiares o de convivencia.</p>
+<p>Puede incluir violencia ejercida contra:</p>
+<ul class="chips"><li>Mujeres</li><li>Niñas y niños</li><li>Personas mayores</li><li>Personas con discapacidad</li><li>Otros miembros de la familia</li></ul>
+<p>Puede ser ejercida por distintos integrantes del núcleo familiar y no necesariamente responde a una violencia motivada por el machismo, aunque muchas violencias intrafamiliares sí están atravesadas por relaciones de género, de desigualdad y de poder.</p>
+<p>Por lo tanto, delimita un espacio relacional pero no la causa estructural de la violencia.</p>
+<p class="legal"><b>En el ámbito legal.</b> El Código Penal (art. 173.2) sanciona la violencia habitual en el ámbito familiar. La Ley 5/2008 recoge también el «ámbito familiar»: la violencia contra mujeres y menores ejercida por otros miembros de la familia o del hogar, sin incluir la de la pareja.</p>
+</div>
+
+<div class="card u-bur">
+<span class="tag">Señala a las víctimas</span>
+<h3>Violencia contra las mujeres</h3>
+<p>Es un término que pone en el centro quiénes son las víctimas de esa violencia: las mujeres. Se refiere a las distintas formas de violencia que sufren las mujeres por el hecho de ser mujeres, o que las afectan de manera desproporcionada en contextos de desigualdad de género. El Convenio de Estambul (Consejo de Europa, 2011) la considera una violación de los derechos humanos y una forma de discriminación.</p>
+<p>Incluye:</p>
+<ul class="chips"><li>Violencia física</li><li>Violencia psicológica</li><li>Violencia sexual</li><li>Violencia económica</li><li>Acoso</li><li>Violencia digital</li><li>Trata y explotación</li><li>Violencia institucional, entre otras</li></ul>
+</div>
+
+<div class="card u-pur">
+<span class="tag">Señala la relación de poder</span>
+<h3>Violencia de género</h3>
+<p>Es un término que identifica la violencia vinculada a las relaciones de poder y desigualdad construidas socialmente en torno al género: normas, roles, estereotipos y expectativas que sitúan a las mujeres en posiciones de subordinación y que contribuyen a mantener relaciones desiguales de poder entre mujeres y hombres.</p>
+<p class="legal"><b>Significado jurídico en España.</b> La Ley Orgánica 1/2004 delimita la violencia de género a la ejercida contra las mujeres por parte de quienes sean o hayan sido sus parejas o exparejas, cuando existe o ha existido una relación afectiva.</p>
+</div>
+
+<div class="card u-cor">
+<span class="tag">Señala el sistema de poder</span>
+<h3>Violencia machista</h3>
+<p>Es un término que refiere explícitamente el sistema de poder que origina y legitima la violencia: el machismo y el patriarcado. Pone en el punto de mira la raíz política y estructural de la violencia al nombrar al sistema que la reproduce.</p>
+<p>No se limita al ámbito de la pareja, sino que puede manifestarse en diferentes espacios:</p>
+<ul class="chips"><li>Familiar y de pareja</li><li>Laboral</li><li>Comunitario</li><li>Educativo</li><li>Cultural</li><li>Instituciones</li><li>Redes digitales…</li></ul>
+<p class="legal">En Cataluña, la <a href="https://www.boe.es/eli/es-ct/l/2008/04/24/5/con">Ley 5/2008</a> habla de «violencia machista».</p>
+</div>
+</div>
+
+<div class="idea"><p><b>Idea clave.</b> No son conceptos intercambiables, ya que no es lo mismo describir dónde se produce una violencia que identificar qué estructura de poder la sostiene.</p></div>
+
+</section>
+
+<section class="step" id="paso-2" data-t="1.2 Formas de violencia" aria-labelledby="h-2">
+<h2 id="h-2">1.2 Formas de violencia</h2>
+<p>Estas son las formas que veremos en el curso. Una misma situación puede combinar varias.</p>
+
+<div class="cards sm">
+<div class="card u-bur"><h3>Física</h3><p>Cualquier acto que provoque o pueda provocar daño corporal, lesiones o sufrimiento físico.</p></div>
+<div class="card u-pur"><h3>Psicológica</h3><p>Acciones que dañan la autoestima, la estabilidad emocional y la autonomía, como humillar, amenazar, controlar, intimidar o manipular.</p></div>
+<div class="card u-cor"><h3>Sexual</h3><p>Cualquier acto, contacto o práctica sexual impuesto sin consentimiento, mediante coerción, intimidación, abuso o fuerza, también en la relación de pareja.</p></div>
+<div class="card u-grn"><h3>Económica</h3><p>Control, limitación o privación de recursos económicos que restringe la autonomía y la capacidad de decisión de una persona. También incluye el impago de la pensión de alimentos de los hijos e hijas.</p></div>
+<div class="card u-blu"><h3>Digital</h3><p>Control, acoso, agresiones, amenazas o difusión de contenidos íntimos sin consentimiento a través de medios digitales.</p></div>
+<div class="card u-bur"><h3>Vicaria</h3><p>Violencia ejercida contra hijas, hijos u otras personas significativas para la mujer con el propósito de dañarla instrumentalizando esos vínculos.</p></div>
+</div>
+
+<div class="cards">
+<div class="card wide u-pur">
+<span class="tag">Institucional</span>
+<h3>Violencia institucional</h3>
+<p>Es la violencia ejercida o reproducida por las instituciones y sus agentes mediante acciones, omisiones, prácticas o procedimientos que discriminan, desprotegen, revictimizan o vulneran los derechos de las mujeres, dificultando su acceso a la protección, la justicia y la reparación.</p>
+<p class="legal">La <a href="https://www.boe.es/eli/es-ct/l/2008/04/24/5/con">Ley 5/2008</a> reconoce la violencia institucional en su artículo 5, entre los ámbitos de la violencia machista.</p>
+</div>
+
+<div class="card wide u-cor">
+<span class="tag">Simbólica</span>
+<h3>Violencia simbólica</h3>
+<p>Se trata de mensajes, imágenes, discursos y representaciones que reproducen, legitiman o naturalizan la desigualdad, la subordinación y la discriminación de las mujeres. Se manifiesta cuando discursos, imágenes, representaciones, normas y prácticas sociales reproducen y legitiman relaciones de desigualdad y dominación.</p>
+<p>La violencia simbólica no es ejercida únicamente por una persona o un grupo concreto. También puede ser reproducida por instituciones, medios de comunicación, industrias culturales, sistemas educativos y organizaciones, incluso sin que exista una intención consciente de causar daño. En ocasiones se encuentra tan normalizada que resulta difícil identificarla.</p>
+<div class="callout u-blu">
+<h4>Lo que aporta la investigación antropológica</h4>
+<p>En este sentido, la investigación antropológica aporta un matiz importante: la reproducción de esta violencia no siempre responde a una voluntad de discriminar, sino que también puede estar relacionada con el desconocimiento de la diversidad cultural.</p>
+<p>Cuando los servicios y las personas profesionales desconocen otras formas de pensar, comunicarse, relacionarse o criar, pueden interpretar erróneamente las actuaciones de una mujer. Por ejemplo, pueden considerar que «no colabora» o que «cuida mal» cuando, en realidad, están juzgando sus prácticas desde parámetros culturales propios que presentan como universales. Estas interpretaciones pueden generar nuevas formas de desprotección y discriminación, incrementando la vulnerabilidad de la persona.</p>
+<p>Grau Rebollo, García Tugas y García García (2023) denominan <b>vulnerabilidad inducida</b> a este incremento de la vulnerabilidad que ya experimenta una persona.</p>
+</div>
+<p>En estos casos, la violencia simbólica puede entrelazarse con la violencia institucional y, en determinadas circunstancias, con prácticas y actitudes racistas. Sin embargo, el desconocimiento cultural no exime de responsabilidad a las instituciones ni a sus profesionales: es necesario cuestionar los propios marcos de interpretación para evitar que la intervención, en lugar de proteger, reproduzca desigualdades y genere nuevas vulneraciones.</p>
+</div>
+</div>
 <p class="refs">Clasificación divulgativa. Más información: ONU Mujeres, <a href="https://www.unwomen.org/es/what-we-do/ending-violence-against-women/faqs/types-of-violence">tipos de violencia contra las mujeres y las niñas</a>.</p>
 
-<h2>1.3 Marco legal en cuatro fechas</h2>
+</section>
+
+<section class="step" id="paso-3" data-t="1.3 Marco legal" aria-labelledby="h-3">
+<h2 id="h-3">1.3 Marco legal en cuatro fechas</h2>
 <ol class="tl">
 <li><b>2004.</b> <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2004-21760">Ley Orgánica 1/2004</a> de medidas de protección integral contra la violencia de género.</li>
 <li><b>2008.</b> <a href="https://www.boe.es/eli/es-ct/l/2008/04/24/5/con">Ley 5/2008</a> de Cataluña, del derecho de las mujeres a erradicar la violencia machista.</li>
@@ -43,39 +167,114 @@
 </ol>
 <p class="refs">Síntesis divulgativa. Para efectos jurídicos, consulta siempre el texto oficial vigente.</p>
 
-<h2>1.4 Actividad: ¿qué tipo de violencia es?</h2>
-<p>Casos ficticios inventados para este curso. Elige la opción más adecuada.</p>
+</section>
 
-<div class="quiz"><p class="q">Caso 1. Marta tiene 34 años. Desde que se separó, su expareja le escribe a todas horas para saber dónde está y con quién. Nunca le ha pegado.</p>
-<button class="opt" type="button" data-ok>Violencia de género, forma psicológica</button>
-<button class="opt" type="button">No es violencia, porque no hay golpes</button>
-<button class="opt" type="button">Violencia intrafamiliar, porque ya no son pareja</button>
-<p class="fb" aria-live="polite" hidden>El control persistente por parte de una expareja es violencia psicológica. La ley incluye a las exparejas, aunque ya no convivan y no haya agresión física.</p></div>
+<section class="step" id="paso-4" data-t="1.4 Actividad · Caso 1" aria-labelledby="h-4">
+<h2 id="h-4">1.4 Actividad: comprender las violencias machistas <span class="time">Caso 1 de 5</span></h2>
+<p>Casos ficticios inventados para este curso. Elige la opción más adecuada. Las opciones cambian de orden cada vez.</p>
 
-<div class="quiz"><p class="q">Caso 2. Un chico de 16 años insulta a su madre, la amenaza y rompe objetos cuando ella no le da dinero.</p>
-<button class="opt" type="button">Violencia de género según la Ley Orgánica 1/2004</button>
-<button class="opt" type="button" data-ok>Violencia intrafamiliar, de hijo a madre</button>
-<button class="opt" type="button">Un conflicto normal de la adolescencia</button>
-<p class="fb" aria-live="polite" hidden>Es violencia en el ámbito familiar. No encaja en la definición estatal de violencia de género, que se refiere a la pareja o expareja, pero necesita intervención.</p></div>
+<div class="case"><p><b class="k">Caso 1.</b> Marta recibe mensajes frecuentes de su expareja preguntándole dónde está, con quién se encuentra y qué está haciendo. Cuando tarda en responder, él le reclama explicaciones y se enfada.</p></div>
+<div class="quiz"><p class="q">¿La expareja de Marta está ejerciendo violencia? Si crees que sí, ¿qué tipo de violencia?</p>
+<button class="opt" type="button">No existe violencia, porque después de una relación sentimental es normal interesarse por la vida de la expareja.</button>
+<button class="opt" type="button">Se trata exclusivamente de un conflicto de comunicación entre dos personas que han terminado una relación.</button>
+<button class="opt" type="button" data-ok>Puede tratarse de violencia psicológica, mediante conductas de control y vigilancia que buscan limitar la autonomía de Marta.</button>
+<button class="opt" type="button">Se trata de violencia económica, porque la expareja está intentando controlar las actividades de Marta.</button>
+<div class="fb" aria-live="polite" hidden>Preguntar ocasionalmente por alguien no constituye por sí mismo violencia. Sin embargo, las preguntas reiteradas en tiempo y en intensidad, la vigilancia, las exigencias de explicaciones y los enfados cuando Marta no responde son mecanismos de control psicológico. La expareja quiere continuar ejerciendo control sobre su vida.</div></div>
 
-<div class="quiz"><p class="q">Caso 3. Un hombre agrede a su pareja en casa. Sus dos hijos, de 5 y 9 años, presencian las agresiones.</p>
-<button class="opt" type="button">Solo hay violencia hacia la madre</button>
-<button class="opt" type="button" data-ok>Violencia de género hacia la madre y los niños también son víctimas</button>
-<button class="opt" type="button">Violencia intrafamiliar sin relación con el género</button>
-<p class="fb" aria-live="polite" hidden>La norma estatal reconoce a los hijos e hijas menores como víctimas. Lo desarrollaremos en la unidad 3.</p></div>
+</section>
 
-<h2>1.5 Antes de juzgar</h2>
-<p>Caso ficticio. Una mujer recién llegada a un servicio habla poco, evita mirar a los ojos a la educadora y no quiere dejar a su hijo al cuidado de otra usuaria. Una profesional piensa: «No colabora y no se preocupa por su hijo».</p>
+<section class="step" id="paso-5" data-t="1.4 Actividad · Caso 2" aria-labelledby="h-5">
+<h2 id="h-5">1.4 Actividad: comprender las violencias machistas <span class="time">Caso 2 de 5</span></h2>
+<div class="case"><p><b class="k">Caso 2.</b> La expareja amenaza con publicar fotografías íntimas de Marta si no responde a sus mensajes. Marta está muy asustada y teme que lo haga.</p></div>
+<div class="quiz"><p class="q">¿Qué tipo de violencia está ejerciendo la expareja de Marta?</p>
+<button class="opt" type="button">Violencia psicológica, porque está intentando manipular emocionalmente a Marta, pero las fotografías no tienen relevancia en este caso.</button>
+<button class="opt" type="button" data-ok>Violencia digital y sexual, porque amenaza con difundir imágenes íntimas sin consentimiento para coaccionarla y controlar su comportamiento.</button>
+<button class="opt" type="button">Un conflicto privado entre exparejas, porque las fotografías fueron compartidas voluntariamente durante la relación.</button>
+<button class="opt" type="button">Violencia económica, porque está intentando conseguir algo a cambio de no publicar las fotografías.</button>
+<div class="fb" aria-live="polite" hidden>La expareja de Marta está ejerciendo violencia mediante amenazas de difusión de imágenes íntimas sin consentimiento. Sin embargo, el consentimiento para compartir una imagen con una persona no equivale al consentimiento para publicarla o enviarla a terceras personas. Se trata de una forma de violencia sexual y digital que utiliza la intimidad de Marta como herramienta de presión, intimidación y de control.
+<p>Además, la amenaza tiene una finalidad coercitiva: conseguir que Marta responda a sus mensajes y se comporte como él exige. Por tanto, también existe una dimensión de violencia psicológica, porque utiliza el miedo, la intimidación y el chantaje para limitar su autonomía y controlarla.</p>
+<details><summary>¿Qué indicadores o elementos permiten identificar la violencia en este caso?</summary>
+<p>Hay que tener en cuenta todos estos aspectos para identificar las violencias que atraviesan a Marta:</p>
+<ul>
+<li><b>Amenaza:</b> utiliza la posibilidad de difundir imágenes íntimas para intimidar a Marta.</li>
+<li><b>Control:</b> pretende mantener el acceso a Marta y condicionar sus decisiones, aunque la relación haya terminado.</li>
+<li><b>Chantaje y coacción:</b> condiciona la no difusión de las fotografías a que ella responda a sus mensajes.</li>
+<li><b>Violación de la intimidad:</b> amenaza con vulnerar su privacidad y su derecho a decidir sobre su propia imagen y sexualidad.</li>
+<li><b>Violencia psicológica:</b> genera miedo, angustia y presión emocional para conseguir obediencia.</li>
+</ul></details></div></div>
 
-<div class="quiz"><p class="q">¿Qué sería lo más acertado antes de sacar conclusiones?</p>
-<button class="opt" type="button">Anotar que es poco colaboradora y avisar al equipo</button>
-<button class="opt" type="button" data-ok>Escuchar su historia, preguntar con respeto por sus costumbres de cuidado y, si hace falta, pedir apoyo de mediación intercultural</button>
-<button class="opt" type="button">Suponer que su cultura es la causa de la violencia que vive</button>
-<p class="fb" aria-live="polite" hidden>Un mismo gesto puede significar cosas distintas según el contexto: respeto, miedo, cansancio o desconfianza hacia los servicios. Conviene preguntar sin interrogar y conocer primero su situación. Atribuir la violencia a la cultura es un error frecuente: la Ley 5/2008 pide distinguir las causas de la violencia machista de la procedencia cultural.</p></div>
+</section>
 
-<div class="quiz"><p class="q">«Comprender el contexto cultural de una mujer ayuda a evitar que los servicios le añadan vulnerabilidad.»</p>
-<button class="opt" type="button" data-ok>Verdadero</button><button class="opt" type="button">Falso</button>
-<p class="fb" aria-live="polite" hidden>Comprender no es justificar: ninguna particularidad cultural justifica vulnerar los derechos fundamentales de las mujeres. Pero conocer su situación evita prejuicios y permite acompañar mejor.</p></div>
+<section class="step" id="paso-6" data-t="1.4 Actividad · Caso 3" aria-labelledby="h-6">
+<h2 id="h-6">1.4 Actividad: comprender las violencias machistas <span class="time">Caso 3 de 5</span></h2>
+<div class="case"><p><b class="k">Caso 3.</b> Marta y su expareja tienen un hijo de seis años. Marta tiene la custodia del niño y hay establecidas visitas en un Servicio Técnico Punto de Encuentro como medidas cautelares. Durante las visitas, la expareja le dice al niño que su madre es la culpable de que la familia esté separada y lo amenaza con dejar de quererlo, enfadarse con él y no querer verle más si cuenta a alguien sus conversaciones. Por otro lado, amenaza a Marta diciéndole que o bien acepta los acuerdos y términos del divorcio que él quiere o va a poner al niño en su contra y no va a autorizar las visitas del niño con la terapeuta.</p></div>
+<div class="quiz"><p class="q">¿Qué tipo de violencia está ejerciendo la expareja de Marta?</p>
+<button class="opt" type="button">Violencia intrafamiliar, porque el conflicto se produce dentro del entorno familiar.</button>
+<button class="opt" type="button" data-ok>Violencia vicaria, porque utiliza a su hijo como instrumento para causar daño a la madre y mantener el control sobre ella.</button>
+<button class="opt" type="button">Violencia económica, porque está utilizando la situación familiar para conseguir lo que quiere.</button>
+<button class="opt" type="button">Un conflicto de crianza, porque ambos progenitores tienen formas diferentes de educar a su hijo.</button>
+<div class="fb" aria-live="polite" hidden>La violencia vicaria se produce cuando un hombre utiliza a los hijos e hijas, u otras personas significativas para la mujer, para causarle daño y ejercer control sobre ella. En este supuesto, la expareja instrumentaliza al niño para castigar, intimidar y hacer sufrir a Marta.
+<p>La violencia no se dirige únicamente contra la madre: el niño también es víctima directa de las amenazas, lo que le provoca un daño emocional. No debe ser considerado un simple espectador del conflicto entre sus progenitores. Además, al impedir que acuda a la terapeuta, está impidiendo su recuperación.</p></div></div>
+
+</section>
+
+<section class="step" id="paso-7" data-t="1.4 Actividad · Caso 4" aria-labelledby="h-7">
+<h2 id="h-7">1.4 Actividad: comprender las violencias machistas <span class="time">Caso 4 de 5</span></h2>
+<div class="case"><p><b class="k">Caso 4.</b> Alberto convive con su madre, de 78 años, que necesita ayuda para realizar algunas actividades cotidianas. Cuando la madre le pide apoyo, Alberto se enfada, le grita, la insulta y, en ocasiones, le impide utilizar el teléfono para comunicarse con otros familiares. También controla su dinero y decide en qué puede gastarlo sin tener en cuenta sus necesidades.</p></div>
+<div class="quiz"><p class="q">¿Qué tipo de violencia se está produciendo en esta situación?</p>
+<button class="opt" type="button">Violencia de género, porque cualquier violencia que ocurre en una familia tiene su origen en la desigualdad entre hombres y mujeres.</button>
+<button class="opt" type="button" data-ok>Violencia intrafamiliar, porque se producen agresiones y conductas de control dentro de una relación familiar.</button>
+<button class="opt" type="button">Un conflicto de convivencia, porque las personas que viven juntas pueden tener desacuerdos sobre los cuidados y el dinero.</button>
+<button class="opt" type="button">Violencia vicaria, porque Alberto utiliza a su madre para hacer daño a otra persona.</button>
+<div class="fb" aria-live="polite" hidden>En este supuesto se produce violencia intrafamiliar porque las agresiones, el maltrato y las conductas de control tienen lugar entre personas que mantienen una relación familiar.
+<p>La violencia puede manifestarse de distintas formas:</p>
+<ul>
+<li><b>Psicológica:</b> gritos, insultos, humillaciones e intimidación.</li>
+<li><b>Económica:</b> control del dinero y limitación de la capacidad de decidir sobre los propios recursos.</li>
+<li><b>Aislamiento y control:</b> impedir que la madre se comunique libremente con otros familiares.</li>
+</ul>
+<p>La violencia intrafamiliar se identifica por el vínculo familiar entre la persona que ejerce la violencia y quien la recibe. No toda violencia intrafamiliar es violencia machista, aunque ambas pueden coincidir cuando las agresiones están atravesadas por relaciones de poder y desigualdades de género.</p>
+<div class="callout u-pur"><h4>Una mirada interseccional</h4>
+<p>Una mirada <span class="term"><button type="button" class="termb" aria-expanded="false" aria-controls="pop-int">interseccional</button><span class="pop" id="pop-int" role="tooltip" hidden>La interseccionalidad es una forma de aproximarse a un problema o un fenómeno social teniendo en cuenta el papel que juega en su manifestación la confluencia concreta de categorías sociales relevantes (género, edad, etnia, discapacidad, orientación sexual, condición migratoria, etc.)</span></span> (pasa el ratón o pulsa la palabra) nos permite comprender que la violencia no afecta a todas las personas de la misma manera. La edad, el género, la clase social, el origen racial o étnico, la discapacidad, la situación administrativa, la orientación sexual o la dependencia económica pueden influir tanto en la forma en que se ejerce la violencia como en las posibilidades de reconocerla, denunciarla y salir de ella.</p>
+<figure class="fig"><svg viewBox="0 0 420 240" role="img" aria-labelledby="t-int" font-family="system-ui,sans-serif"><title id="t-int">Una persona en el centro, atravesada por seis ejes de desigualdad: género, edad, etnia, discapacidad, orientación sexual y condición migratoria.</title>
+<g stroke="#6B3FA0" stroke-width="2" opacity=".5"><line x1="210" y1="120" x2="360" y2="120"/><line x1="210" y1="120" x2="285" y2="32"/><line x1="210" y1="120" x2="135" y2="32"/><line x1="210" y1="120" x2="60" y2="120"/><line x1="210" y1="120" x2="135" y2="208"/><line x1="210" y1="120" x2="285" y2="208"/></g>
+<circle cx="210" cy="120" r="38" fill="#6B3FA0"/><text x="210" y="125" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">Persona</text>
+<g font-size="11.5" text-anchor="middle" font-weight="600" fill="#241F2B" stroke="#6B3FA0" stroke-width="1.5">
+<rect x="300" y="105" width="118" height="30" rx="15" fill="#F3EDF9"/><rect x="226" y="17" width="118" height="30" rx="15" fill="#F3EDF9"/><rect x="76" y="17" width="118" height="30" rx="15" fill="#F3EDF9"/><rect x="2" y="105" width="118" height="30" rx="15" fill="#F3EDF9"/><rect x="76" y="193" width="118" height="30" rx="15" fill="#F3EDF9"/><rect x="226" y="193" width="118" height="30" rx="15" fill="#F3EDF9"/></g>
+<g font-size="11.5" text-anchor="middle" font-weight="600" fill="#241F2B"><text x="359" y="124">Condición migratoria</text><text x="285" y="36">Orientación sexual</text><text x="135" y="36">Género</text><text x="61" y="124">Edad</text><text x="135" y="212">Etnia</text><text x="285" y="212">Discapacidad</text></g></svg>
+<figcaption>Los ejes se cruzan en cada persona: no todas viven la violencia de la misma manera.</figcaption></figure>
+<p>En el supuesto de Alberto y su madre, no basta con identificar que se trata de violencia intrafamiliar. También debemos preguntarnos qué condiciones sitúan a la madre en una posición de mayor vulnerabilidad y qué relaciones de poder permiten que Alberto ejerza ese control.</p>
+<p>Por ejemplo, la edad, pero en especial la necesidad de apoyo para las actividades cotidianas, pueden aumentar la dependencia de la madre respecto a su hijo. Si además tiene una discapacidad, dificultades de comunicación, escasos recursos económicos o una red social limitada, puede encontrar más obstáculos para pedir ayuda o romper el aislamiento.</p>
+<p>La perspectiva interseccional también nos invita a cuestionar los prejuicios sociales sobre la vejez y la dependencia. A veces, determinadas formas de maltrato se minimizan bajo la idea de que son asuntos privados de familia, que las personas mayores deben aceptar determinadas decisiones de sus hijos o que quienes necesitan cuidados tienen menos capacidad para decidir sobre sus propias vidas.</p></div></div></div>
+
+</section>
+
+<section class="step" id="paso-8" data-t="1.4 Actividad · Caso 5" aria-labelledby="h-8">
+<h2 id="h-8">1.4 Actividad: comprender las violencias machistas <span class="time">Caso 5 de 5</span></h2>
+<div class="case"><p><b class="k">Caso 5.</b> Amina es una mujer racializada con hiyab que acude a un servicio público para pedir ayuda porque su pareja ejerce un control constante sobre su vida. No le permite salir de casa libremente y, en ocasiones, llega a encerrarla con llave. También controla su dinero y retiene sus documentos personales, limitando así su autonomía y su capacidad para tomar decisiones.</p>
+<p>Amina explica que ese día tenía una cita médica, pero que finalmente ha decidido acudir al servicio para pedir ayuda.</p>
+<p>Durante la atención, la profesional que la recibe realiza varios comentarios sobre su origen del tipo: «Bueno, en vuestro país esto es normal, ¿no?» A continuación, añade que ya ha atendido a otras mujeres de su misma procedencia que vivían situaciones similares y que, por lo que sabe, estas prácticas forman parte de su cultura.</p>
+<p>Después, le pregunta si su pareja la ha agredido físicamente. Cuando Amina responde que no, la profesional le dice que no puede ayudarla porque no ha habido una agresión física.</p></div>
+
+<div class="quiz"><p class="q">Pregunta 1. Cuando la profesional le dice a Amina «Bueno, en vuestro país esto es normal, ¿no?», ¿qué está haciendo?</p>
+<button class="opt" type="button">Mostrando sensibilidad hacia las diferencias culturales.</button>
+<button class="opt" type="button" data-ok>Reproduciendo un estereotipo cultural que normaliza la violencia y el control sobre las mujeres racializadas.</button>
+<button class="opt" type="button">Intentando conocer mejor las costumbres familiares de Amina.</button>
+<button class="opt" type="button">Respetando las decisiones culturales de la usuaria.</button>
+<div class="fb" aria-live="polite" hidden>Atribuir el control a la cultura de Amina generaliza y presenta la violencia como una característica cultural. De este modo se invisibiliza la responsabilidad de quien la ejerce y se normalizan las prácticas de dominación.</div></div>
+
+<div class="quiz"><p class="q">Pregunta 2. ¿Qué forma de violencia se produce cuando la profesional manifiesta no poder ayudar a Amina porque no ha sufrido una agresión física?</p>
+<button class="opt" type="button">Exclusivamente violencia psicológica.</button>
+<button class="opt" type="button">Violencia intrafamiliar.</button>
+<button class="opt" type="button" data-ok>Violencia institucional, al desprotegerla y dificultar su acceso a la atención por no reconocer otras formas de violencia.</button>
+<button class="opt" type="button">Un desacuerdo entre la profesional y la usuaria.</button>
+<div class="fb" aria-live="polite" hidden>La experiencia de Amina nos permite comprender que la violencia institucional no siempre se manifiesta mediante una negativa explícita o un mal trato. También puede aparecer en comentarios aparentemente cotidianos, preguntas cargadas de prejuicios, interpretaciones racistas y decisiones profesionales que dejan a las mujeres sin protección y/o apoyo.
+<h3 style="margin-top:1em">¿Dónde se manifiesta la violencia institucional?</h3>
+<div class="cards">
+<div class="card u-pur"><h3>1. Negación de atención y desprotección institucional</h3><p>No intervenir porque no existe una agresión física supone ignorar otras formas de violencia, como el control psicológico, la violencia económica, el aislamiento y la privación de libertad. La institución deja de ofrecer protección precisamente cuando Amina solicita ayuda.</p></div>
+<div class="card u-cor"><h3>2. Racismo y estereotipos culturales</h3><p>Cuando la profesional afirma «en vuestro país esto es normal» o atribuye las situaciones de control a la cultura de Amina, generaliza y presenta la violencia como una característica cultural. De este modo, invisibiliza la responsabilidad de quien la ejerce y normaliza las prácticas de dominación.</p></div>
+<div class="card u-blu"><h3>3. Homogeneización de las mujeres racializadas</h3><p>Utilizar las experiencias de otras mujeres de su misma procedencia para interpretar la situación de Amina supone tratarla como parte de un grupo homogéneo, sin escuchar ni atender a su experiencia individual.</p></div>
+</div></div></div>
 
 <div class="note"><p><b>Para pensar</b> (no se guarda nada)</p>
 <ul>
@@ -85,13 +284,22 @@
 <li>¿Estoy suponiendo que todas las personas de un mismo origen piensan igual?</li>
 </ul></div>
 
-<h2>Lo esencial</h2>
-<ul>
-<li>La violencia contra las mujeres es el concepto más amplio. La violencia de género, en la ley estatal, se refiere a la pareja o expareja.</li>
-<li>La violencia intrafamiliar abarca a toda la familia y puede coincidir con la anterior.</li>
-<li>La violencia psicológica también es violencia, aunque no deje marcas.</li>
-<li>El desconocimiento de otras formas de entender la vida puede añadir vulnerabilidad dentro de los propios servicios. Comprender antes de juzgar es parte de la prevención.</li>
-</ul>
+</section>
+
+<section class="step" id="paso-9" data-t="1.5 Lo esencial" aria-labelledby="h-9">
+<h2 id="h-9">1.5 Lo esencial</h2>
+<div class="cards cardsol">
+<div class="card u-bur"><h3>La violencia no siempre es física</h3><p>El control, las amenazas, la vigilancia, el aislamiento, la intimidación y la restricción de la libertad también son formas de violencia. No es necesario que exista una agresión física para reconocer que una mujer está viviendo una situación de violencia.</p></div>
+<div class="card u-pur"><h3>Una misma situación puede incluir diferentes formas de violencia</h3><p>La violencia psicológica, económica, sexual, digital y vicaria pueden aparecer simultáneamente y reforzarse entre sí. Por ejemplo, amenazar con difundir imágenes íntimas para obligar a una mujer a responder combina violencia digital, sexual y psicológica.</p>
+<figure class="fig"><svg viewBox="0 0 260 175" role="img" aria-labelledby="t-comb" font-family="system-ui,sans-serif"><title id="t-comb">Tres círculos que se superponen: violencia digital, sexual y psicológica.</title>
+<circle cx="100" cy="68" r="52" fill="#2A6291" fill-opacity=".35" stroke="#2A6291" stroke-width="2"/><circle cx="160" cy="68" r="52" fill="#B93F27" fill-opacity=".35" stroke="#B93F27" stroke-width="2"/><circle cx="130" cy="112" r="52" fill="#6B3FA0" fill-opacity=".35" stroke="#6B3FA0" stroke-width="2"/>
+<g font-size="12" font-weight="700" fill="#241F2B" text-anchor="middle"><text x="72" y="56">Digital</text><text x="188" y="56">Sexual</text><text x="130" y="140">Psicológica</text></g></svg></figure></div>
+<div class="card u-cor"><h3>La violencia vicaria utiliza los vínculos afectivos para causar daño</h3><p>Los hijos e hijas u otras personas significativas pueden ser instrumentalizados para controlar, amenazar o hacer daño a una mujer. Las niñas y los niños son víctimas directas de estas acciones.</p></div>
+<div class="card u-blu"><h3>La violencia intrafamiliar identifica el ámbito en el que se produce</h3><p>La violencia puede darse entre distintos miembros de una familia e incluye maltrato físico, psicológico, sexual, control económico, aislamiento y otras formas de abuso. Puede coincidir con dinámicas de violencia machista, pero ambos conceptos no significan lo mismo.</p></div>
+<div class="card u-grn"><h3>La violencia simbólica reproduce y normaliza las desigualdades</h3><p>Los discursos, imágenes, estereotipos y representaciones culturales pueden contribuir a justificar la subordinación y la discriminación de las mujeres. Esta violencia puede reproducirse tanto en las relaciones cotidianas como en los medios de comunicación, las instituciones y otros espacios sociales.</p></div>
+<div class="card u-pur"><h3>La violencia institucional también debe identificarse</h3><p>Las instituciones y sus profesionales pueden reproducir violencia cuando actúan desde prejuicios racistas, sexistas o culturales, cuestionan las experiencias de las mujeres, las culpabilizan o les niegan sus derechos. Estas prácticas pueden generar nuevas formas de discriminación y desprotección.</p></div>
+<div class="card u-bur"><h3>Las violencias están atravesadas por diferentes desigualdades</h3><p>No todas las mujeres experimentan la violencia de la misma manera. El género se entrecruza con el racismo, la clase social, la edad, la discapacidad, el origen y otros ejes de desigualdad. La perspectiva interseccional permite reconocer cómo estas desigualdades se relacionan y condicionan las experiencias de violencia.</p></div>
+</div>
 
 <div class="nav"><a class="btn ghost" href="../unidad-0/index.html">Unidad anterior</a>
 <button class="btn ghost" type="button" data-reset="u1">Volver a hacer la unidad</button>
@@ -106,7 +314,65 @@
 <li>Grau Rebollo, J., García Tugas, L. y García García, B. (2023). Induced vulnerability: the consequences of racialization for African women in an emergency shelter in Catalonia (Spain). <i>Ethnic and Racial Studies</i>, 47(7), 1510-1527. <a href="https://doi.org/10.1080/01419870.2023.2289135">https://doi.org/10.1080/01419870.2023.2289135</a></li>
 <li>Los números de ayuda proceden de la Delegación del Gobierno contra la Violencia de Género y de la Generalitat de Catalunya.</li>
 </ul>
+</section>
+</div>
+
+<div class="stepnav" id="stepnav"><button class="btn ghost" id="prev" type="button" hidden></button><button class="btn nx" id="next" type="button"></button></div>
 </main>
 <script src="../assets/app.js"></script>
+<script>
+/* Ventana flotante de términos (pasar el ratón, enfocar o pulsar) */
+(function(){
+var terms=[].slice.call(document.querySelectorAll('.term'));
+function place(t){var p=t.querySelector('.pop'),b=t.querySelector('.termb');p.style.left='0px';p.style.setProperty('--ax','24px');
+var r=p.getBoundingClientRect(),m=12,d=0;
+if(r.right>window.innerWidth-m)d=window.innerWidth-m-r.right;
+if(r.left+d<m)d=m-r.left;
+p.style.left=d+'px';
+var br=b.getBoundingClientRect(),pr=p.getBoundingClientRect();
+p.style.setProperty('--ax',Math.max(12,Math.min(pr.width-24,br.left-pr.left+br.width/2-6))+'px')}
+function show(t){var p=t.querySelector('.pop');p.hidden=false;t.querySelector('.termb').setAttribute('aria-expanded','true');place(t)}
+function hide(t){t.querySelector('.pop').hidden=true;t.querySelector('.termb').setAttribute('aria-expanded','false')}
+terms.forEach(function(t){
+var b=t.querySelector('.termb');
+t.addEventListener('mouseenter',function(){show(t)});
+t.addEventListener('mouseleave',function(){if(!t.dataset.pin)hide(t)});
+b.addEventListener('focus',function(){show(t)});
+b.addEventListener('blur',function(){if(!t.dataset.pin)hide(t)});
+b.addEventListener('click',function(e){e.stopPropagation();if(t.dataset.pin){delete t.dataset.pin;hide(t)}else{t.dataset.pin='1';show(t)}});
+});
+function closeAll(){terms.forEach(function(t){delete t.dataset.pin;hide(t)})}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeAll()});
+document.addEventListener('click',closeAll);
+})();
+</script>
+<script>
+/* Unidad por pasos: sin JavaScript, todo el contenido se ve seguido */
+(function(){
+var root=document.getElementById('steps'),steps=[].slice.call(root.querySelectorAll('.step')),N=steps.length;
+var nav=document.getElementById('stepper'),dots=document.getElementById('dots'),si=document.getElementById('si'),st=document.getElementById('st'),bf=document.getElementById('bf'),pb=nav.querySelector('[role=progressbar]');
+var prev=document.getElementById('prev'),next=document.getElementById('next'),vall=document.getElementById('vall'),sn=document.getElementById('stepnav');
+var cur=1,all=false,seen={};
+nav.hidden=false;
+steps.forEach(function(s,i){var b=document.createElement('button'),li=document.createElement('li');b.type='button';b.textContent=i+1;b.title=s.getAttribute('data-t');b.setAttribute('aria-label','Ir al paso '+(i+1)+': '+s.getAttribute('data-t'));b.addEventListener('click',function(){go(i+1)});li.appendChild(b);dots.appendChild(li)});
+function parse(){var m=/paso-(\d+)/.exec(location.hash);var n=m?parseInt(m[1],10):1;return n>=1&&n<=N?n:1}
+function go(n){if(n===cur&&location.hash==='#paso-'+n)return;location.hash='paso-'+n}
+function render(n,scroll){cur=n;seen[n]=1;
+steps.forEach(function(s,i){s.hidden=!all&&(i+1!==n)});
+[].forEach.call(dots.querySelectorAll('button'),function(b,i){b.classList.toggle('seen',!!seen[i+1]);if(i+1===n)b.setAttribute('aria-current','step');else b.removeAttribute('aria-current')});
+si.textContent='Paso '+n+' de '+N;st.textContent=steps[n-1].getAttribute('data-t');
+bf.style.width=(n/N*100)+'%';pb.setAttribute('aria-valuenow',n);
+prev.hidden=n===1;prev.textContent='Anterior';
+next.hidden=n===N;next.innerHTML='Siguiente';
+if(scroll){var y=nav.getBoundingClientRect().top+window.pageYOffset-70;window.scrollTo(0,Math.max(0,y));var h=steps[n-1].querySelector('h2');if(h){h.setAttribute('tabindex','-1');h.focus({preventScroll:true})}}}
+prev.addEventListener('click',function(){go(cur-1)});
+next.addEventListener('click',function(){go(cur+1)});
+vall.addEventListener('click',function(){all=!all;vall.setAttribute('aria-pressed',all);vall.textContent=all?'Volver a verla por pasos':'Ver toda la unidad en una sola página';document.body.classList.toggle('allmode',all);render(cur,false)});
+window.addEventListener('hashchange',function(){render(parse(),true)});
+/* «Volver a hacer la unidad» vuelve al paso 1 */
+document.addEventListener('click',function(e){if(e.target.closest('[data-reset]'))history.replaceState(null,'',location.pathname)},true);
+render(parse(),false);
+})();
+</script>
 </body>
 </html>
